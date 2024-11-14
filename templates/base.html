@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}
+    <title>{% block title %} {% endblock title %}</title>
+    {% endblock head %}
+</head>
+
+<body class="flex flex-col justify-between min-h-screen fond-sans leading-normal">
+    <div class="h-16"> {% block header %} {% endblock header %} </div>
+    <main class="container flex-1 w-full md:max-w-3xl mx-auto">
+      {% block content %} {% endblock content %}
+    </main>
+    {% block footer %} 
+    <div class="flex w-full h-20 justify-center items-center">
+      <p>This is my footer :)<p>
+    </div>
+    {% endblock footer %}
+</body>
+
+<!-- we can put some nice JS stuff here later -->
+
+
+</html>
