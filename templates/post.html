@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+<div class="w-full h-full px-4 md:px-6 text-xl leading-normal">
+{% block content %}
+    <h1>Posting!</h1>
+    <h2>{{ meta_data.title }}</h2>
+    <p>{{ meta_data.file_name }}</p>
+    <p>{{ meta_data.description }}</p>
+    <p>{{ meta_data.tags }}</p>
+    <p>{{ meta_data.author }}</p>
+    <p>{{ meta_data.date }}</p>
+{% endblock content %}
+</div>

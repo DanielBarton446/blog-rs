@@ -21,6 +21,7 @@ pub async fn index(templates: web::Data<tera::Tera>) -> impl Responder {
         description: "This is the home page of the blog".to_string(),
     };
 
+    // what are youuuuuuu
     ter_context.insert("my_content", &data);
 
     // we can't find the path to the template likely.

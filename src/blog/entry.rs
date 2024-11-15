@@ -13,6 +13,7 @@ pub fn start_blog(listener: TcpListener) -> Result<Server, std::io::Error>{
             .app_data(web::Data::new(TEMPLATES.clone()))
             .route("/health", web::get().to(HttpResponse::Ok))
             .service(handlers::home_handler::index)
+            .service(handlers::post_handler::get_post)
     })
     .listen(listener)?
     .run();

@@ -3,6 +3,7 @@ pub mod blog {
     pub mod entry;
     pub mod handlers {
         pub mod home_handler;
+        pub mod post_handler;
     }
 }
 
