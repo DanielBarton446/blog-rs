@@ -9,5 +9,12 @@
     <p>{{ meta_data.tags }}</p>
     <p>{{ meta_data.author }}</p>
     <p>{{ meta_data.date }}</p>
+
+    <h1>REAL DATA WOOHOO!</h1>
+    <div id="content"></div>
+    <!-- safe indicates we are okay with translating symbold to html -->
+    <!-- without needing to be concerned about XSS. Wow. very cool   -->
+    {{ post_content | safe }}
 {% endblock content %}
 </div>
+
