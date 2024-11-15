@@ -11,6 +11,6 @@ foo
 - bullet point
 
 ~testing~
-| header | something |
-| ------ | --------- |
-| some   | field     |
+| header |
+| ------ |
+| some   |

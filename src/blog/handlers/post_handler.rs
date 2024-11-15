@@ -69,7 +69,15 @@ pub async fn get_post(templ: web::Data<tera::Tera>, post_name: web::Path<String>
                     // we can now extract and parse our markdown
                     match extract_post_markdown(post_name, file_name) {
                         Ok(content) => {
-                            context.insert("post_content", &markdown::to_html(&content));
+                            let mut options = pulldown_cmark::Options::empty();
+                            options.insert(pulldown_cmark::Options::ENABLE_TABLES);
+                            options.insert(pulldown_cmark::Options::ENABLE_STRIKETHROUGH);
+                            let parser = pulldown_cmark::Parser::new_ext(&content, options);
+
+                            // Write to a new String buffer.
+                            let mut html_output = String::new();
+                            pulldown_cmark::html::push_html(&mut html_output, parser);
+                            context.insert("post_content", &html_output);
                         }
                         // we don't have to have content. 500 are sad. fail softly
                         Err(_) => println!(""),
