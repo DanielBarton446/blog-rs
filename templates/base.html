@@ -9,16 +9,18 @@
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">    
 </head>
 
-<body class="flex flex-col justify-between min-h-screen fond-sans leading-normal">
+<body class="flex flex-col justify-between min-h-screen font-serif leading-normal bg-pink-100">
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">    
-    <main class="container flex-1 w-full md:max-w-3xl mx-auto">
+    <main class="container flex-1 w-full mx-auto rounded-lg md:max-w-3xl">
+      <div class="bg-pastel-seafoam">
       {% block content %} {% endblock content %}
+      </div class="bg-pastel-seafoam">
     </main>
     {% block footer %} 
-    <div class="flex w-full h-20 justify-center items-center">
+    <div class="flex w-full h-20 justify-center items-center bg-gradient-to-r from-pastel-salmon to-pastel-yellow">
       <p>This is my footer :)<p>
+      {% endblock footer %}
     </div>
-    {% endblock footer %}
 </body>
 
 <!-- we can put some nice JS stuff here later -->

@@ -2,19 +2,26 @@
 
 <div class="w-full h-full px-4 md:px-6 text-xl leading-normal">
 {% block content %}
-    <h1>Posting!</h1>
-    <h2>{{ meta_data.title }}</h2>
-    <p>{{ meta_data.file_name }}</p>
-    <p>{{ meta_data.description }}</p>
-    <p>{{ meta_data.tags }}</p>
-    <p>{{ meta_data.author }}</p>
-    <p>{{ meta_data.date }}</p>
-
-    <h1>REAL DATA WOOHOO!</h1>
-    <div id="content"></div>
-    <!-- safe indicates we are okay with translating symbold to html -->
+    <div class="p-6 bg-pastel-purple rounded-lg shadow-md space-y-4">
+      <h1>{{ meta_data.title }}</h2>
+      <h2>
+        <span class="p-1 bg-gradient-to-r from-pastel-blue to-pastel-salmon">
+          <span>Author: </span>
+          <span>{{ meta_data.author }} </span>
+        </span>
+      </h2>
+      <h3 class="mt-0 mb-0">Description:</h3>
+      <p class="mt-0 leading-tight">
+      {{ meta_data.description }} <br>
+      {{ meta_data.tags }} <br>
+      {{ meta_data.date }}
+      </p>
+    </div>
+    <!-- safe indicates we are okay with translating symbols to html -->
     <!-- without needing to be concerned about XSS. Wow. very cool   -->
-    {{ post_content | safe }}
+    <div class="p-6 rounded-lg shadow-md space-y-4">
+      {{ post_content | safe }}
+    </div>
 {% endblock content %}
 </div>
 
