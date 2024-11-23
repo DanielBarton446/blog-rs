@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 
-<div class="w-full h-full px-4 text-xl leading-normal">
-{% block content %}
-  <div class="bg-pastel-salmon shadow-md px-4 rounded-lg">
+<div class="h-full w-full px-4 text-xl leading-normal">
+  {% block content %}
+  <div class="bg-pastel-salmon mt-4 rounded-lg px-4 py-2 shadow-lg">
     <h1>Home</h1>
     <h2>This is my perogative</h2>
     <p>Welcome to the home page!</p>
+    <p>
+      This is where all posts contents are shown. To go to a particular post,
+      good luck!
+    </p>
   </div>
 
   {% for post in all_posts %}
-      <div class="p-6 rounded-lg shadow-md">
-        {{ post | safe }}
-      </div>
-  {% endfor %}
-
-{% endblock content %}
+  <div class="bg-pastel-seafoam mt-4 rounded-lg p-3 shadow-md">
+    {{ post | safe }}
+  </div>
+  {% endfor %} {% endblock content %}
 </div>
