@@ -2,7 +2,7 @@
 
 <div class="w-full h-full px-4 md:px-6 text-xl leading-normal">
 {% block content %}
-    <div class="p-6 bg-pastel-purple rounded-lg shadow-md space-y-4">
+    <div class="p-6 bg-pastel-purple rounded-lg shadow-md">
       <h1>{{ meta_data.title }}</h2>
       <h2>
         <span class="p-1 bg-gradient-to-r from-pastel-blue to-pastel-salmon">
@@ -13,13 +13,15 @@
       <h3 class="mt-0 mb-0">Description:</h3>
       <p class="mt-0 leading-tight">
       {{ meta_data.description }} <br>
-      {{ meta_data.tags }} <br>
-      {{ meta_data.date }}
+      <p class="italic">
+        {{ meta_data.tags }}
+      </p>
+      Posting Date: {{ meta_data.date }}
       </p>
     </div>
     <!-- safe indicates we are okay with translating symbols to html -->
     <!-- without needing to be concerned about XSS. Wow. very cool   -->
-    <div class="p-6 rounded-lg shadow-md space-y-4">
+    <div class="p-6 rounded-lg shadow-md">
       {{ post_content | safe }}
     </div>
 {% endblock content %}

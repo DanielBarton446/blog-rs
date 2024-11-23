@@ -1,16 +1,13 @@
-# Header?
-foo
+# Testing Header?
+foo <br>
 *italicized bar*
 **bold baz**
+~strikethrough~
 
 - bullet point
 - bullet point
-- bullet point
-- bullet point
-- bullet point
-- bullet point
 
-~testing~
-| header | something |
+
+| table  | test      |
 | ------ | --------- |
 | some   | field     |

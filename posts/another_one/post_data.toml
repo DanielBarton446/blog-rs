@@ -1,0 +1,6 @@
+title = 'First blog!'
+file_name = 'content.md'
+description = 'Some meta description'
+tags = []
+author = 'Daniel Barton'
+date = '20241114'
