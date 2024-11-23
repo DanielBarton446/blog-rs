@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block head %}
     <title>{% block title %} {% endblock title %}</title>
     {% endblock head %}
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">    
 </head>
 
 <body class="flex flex-col justify-between min-h-screen fond-sans leading-normal">
-    <div class="h-16"> {% block header %} {% endblock header %} </div>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">    
     <main class="container flex-1 w-full md:max-w-3xl mx-auto">
       {% block content %} {% endblock content %}
     </main>

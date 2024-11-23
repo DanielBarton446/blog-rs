@@ -1,6 +1,7 @@
 use std::io::Error;
 
 use actix_web::{web, HttpResponse};
+use pulldown_cmark::{Event, Tag};
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
@@ -17,7 +18,7 @@ fn extract_post_markdown(post_name: String, content_filename: &str) -> Result<St
     // convert from markdown to html?
     // of course we can't find "content.md" here because we aren't in the correcty
     // directory
-    match std::fs::read_to_string(format!("./posts/{}/{}", post_name, content_filename)){
+    match std::fs::read_to_string(format!("./posts/{}/{}", post_name, content_filename)) {
         Ok(content) => return Ok(content),
         Err(e) => {
             println!("{}", e); // replace me with log pls pls pls
@@ -64,7 +65,10 @@ pub async fn get_post(templ: web::Data<tera::Tera>, post_name: web::Path<String>
 
     match context.get("meta_data") {
         Some(meta) => {
-            match meta.get("file_name").and_then(|file_name| file_name.as_str()) {
+            match meta
+                .get("file_name")
+                .and_then(|file_name| file_name.as_str())
+            {
                 Some(file_name) => {
                     // we can now extract and parse our markdown
                     match extract_post_markdown(post_name, file_name) {
@@ -72,7 +76,13 @@ pub async fn get_post(templ: web::Data<tera::Tera>, post_name: web::Path<String>
                             let mut options = pulldown_cmark::Options::empty();
                             options.insert(pulldown_cmark::Options::ENABLE_TABLES);
                             options.insert(pulldown_cmark::Options::ENABLE_STRIKETHROUGH);
-                            let parser = pulldown_cmark::Parser::new_ext(&content, options);
+                            let parser = pulldown_cmark::Parser::new_ext(&content, options)
+                                .map(|event| match event {
+                                    Event::Start(Tag::List(None)) => {
+                                        Event::Html("<ul class=\"list-roman\">".into())
+                                    }
+                                    _ => event,
+                                });
 
                             // Write to a new String buffer.
                             let mut html_output = String::new();
