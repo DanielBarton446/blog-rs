@@ -13,12 +13,20 @@ module.exports = {
       }
     },
     listStyleType: {
-      'none': 'none',
       'disc': 'disc',
       'decimal': 'decimal',
       'square': 'square',
-      'roman': 'upper-roman',
+      'roman': 'roman',
+      'upper-roman': 'upper-roman',
     },
   },
+  safelist: [
+    'list-disc',
+    'list-decimal',
+    'list-square',
+    'list-roman',
+    'list-upper-roman',
+    'list-inside',
+  ],
   plugins: [],
 }

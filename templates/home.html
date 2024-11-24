@@ -14,7 +14,10 @@
 
   {% for post in all_posts %}
   <div class="bg-pastel-seafoam mt-4 rounded-lg p-3 shadow-md">
-    {{ post | safe }}
+    <span class="text-sm text-gray-500 mb-2">
+      {{ post[0] }} 
+    </span>
+    {{ post[1] | safe }}
   </div>
   {% endfor %} {% endblock content %}
 </div>

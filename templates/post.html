@@ -2,7 +2,7 @@
 
 <div class="h-full w-full px-4 text-xl leading-normal md:px-6">
   {% block content %}
-  <div class="bg-pastel-purple rounded-lg mt-5 p-6 shadow-md">
+  <div class="bg-pastel-purple mt-5 rounded-lg p-6 shadow-md">
     <h1>{{ meta_data.title }}</h1>
     <h2>
       <span class="from-pastel-blue to-pastel-salmon bg-gradient-to-r p-1">
@@ -18,7 +18,9 @@
   </div>
   <!-- safe indicates we are okay with translating symbols to html -->
   <!-- without needing to be concerned about XSS. Wow. very cool   -->
-  <div class="bg-pastel-seafoam rounded-lg mt-5 p-6 shadow-md">{{ post_content | safe }}</div>
+  <div class="bg-pastel-seafoam mt-5 rounded-lg p-6 shadow-md">
+    {{ post_content | safe }}
+  </div>
   {% endblock content %}
 </div>
 <script src="../tailwind/prism-init.js"></script>

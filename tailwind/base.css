@@ -18,3 +18,7 @@ h3 {
 a {
   @apply text-blue-500 hover:text-blue-700 underline;
 }
+
+table {
+  @apply table-auto border-separate 
+}

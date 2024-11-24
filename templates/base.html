@@ -3,17 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/prism.css" />
+
     {% block head %}
     <title>{% block title %} {% endblock title %}</title>
     {% endblock head %}
-    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
-    <link href="/static/prism.css" rel="stylesheet" />
   </head>
 
   <body
     class="flex min-h-screen flex-col justify-between bg-pink-100 font-serif leading-normal"
   >
-    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
     <main class="container mx-auto w-full flex-1 rounded-lg md:max-w-3xl">
       <div>{% block content %} {% endblock content %}</div>
     </main>
