@@ -593,10 +593,6 @@ video {
   margin-right: auto;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -605,8 +601,16 @@ video {
   margin-top: 0px;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .block {
@@ -661,11 +665,6 @@ video {
   border-radius: 0.5rem;
 }
 
-.bg-pink-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 231 243 / var(--tw-bg-opacity, 1));
-}
-
 .bg-pastel-purple {
   --tw-bg-opacity: 1;
   background-color: rgb(219 205 240 / var(--tw-bg-opacity, 1));
@@ -681,14 +680,13 @@ video {
   background-color: rgb(201 228 222 / var(--tw-bg-opacity, 1));
 }
 
-.bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+.bg-pink-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 231 243 / var(--tw-bg-opacity, 1));
 }
 
-.from-pastel-salmon {
-  --tw-gradient-from: #F7D9C4 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(247 217 196 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
 .from-pastel-blue {
@@ -697,12 +695,18 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.to-pastel-yellow {
-  --tw-gradient-to: #FAEDCB var(--tw-gradient-to-position);
+.from-pastel-salmon {
+  --tw-gradient-from: #F7D9C4 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(247 217 196 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .to-pastel-salmon {
   --tw-gradient-to: #F7D9C4 var(--tw-gradient-to-position);
+}
+
+.to-pastel-yellow {
+  --tw-gradient-to: #FAEDCB var(--tw-gradient-to-position);
 }
 
 .p-1 {
@@ -776,6 +780,17 @@ h3 {
   margin-bottom: 0.125rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+a {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+  text-decoration-line: underline;
+}
+
+a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity, 1));
 }
 
 @media (min-width: 768px) {
